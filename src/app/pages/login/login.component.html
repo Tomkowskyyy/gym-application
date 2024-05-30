@@ -1,0 +1,112 @@
+<div class="parent">
+  <h1>Witaj na stronie Rusz4Litery!</h1>
+  <br /><br />
+  <div
+    class="container"
+    [ngClass]="isSignDivVisiable ? 'active' : ''"
+    id="container"
+  >
+    <div class="form-container sign-up">
+      <form>
+        <h1>Utwórz konto</h1>
+
+        <input
+          type="email"
+          name="email"
+          [(ngModel)]="signUpObj.email"
+          placeholder="Email"
+        />
+        <input
+          type="password"
+          name="password"
+          [(ngModel)]="signUpObj.password"
+          placeholder="Hasło"
+        />
+        <input
+          type="text"
+          name="name"
+          [(ngModel)]="signUpObj.name"
+          placeholder="Imię"
+        />
+        <input
+          type="text"
+          name="surname"
+          [(ngModel)]="signUpObj.surname"
+          placeholder="Nazwisko"
+        />
+        <input
+          type="number"
+          name="age"
+          [(ngModel)]="signUpObj.age"
+          placeholder="Wiek"
+        />
+        <input
+          type="number"
+          name="height"
+          [(ngModel)]="signUpObj.height"
+          placeholder="Wzrost"
+          step="0.1"
+        />
+        <input
+          type="number"
+          name="weight"
+          [(ngModel)]="signUpObj.weight"
+          placeholder="Waga"
+          step="0.1"
+        />
+        <button (click)="onRegister()">Rejestracja</button>
+      </form>
+    </div>
+    <div class="form-container sign-in">
+      <form>
+        <h1>Logowanie</h1>
+
+        <input
+          type="email"
+          name="email"
+          [(ngModel)]="loginObj.email"
+          placeholder="Email"
+        />
+        <input
+          type="password"
+          name="password"
+          [(ngModel)]="loginObj.password"
+          placeholder="Hasło"
+        />
+
+        <button (click)="onLogin()">Logowanie</button>
+      </form>
+    </div>
+    <div class="toggle-container">
+      <div class="toggle">
+        <div class="toggle-panel toggle-left">
+          <h1>Masz już konto?</h1>
+          <p>Zaloguj się, aby mieć dostęp do aplikacji!</p>
+          <button
+            type="button"
+            class="hidden"
+            id="login"
+            (click)="isSignDivVisiable = false"
+          >
+            Logowanie
+          </button>
+        </div>
+        <div class="toggle-panel toggle-right">
+          <h1>Nie masz jeszcze konta?</h1>
+          <p>
+            Zarejestruj się już teraz i korzystaj z funkcjonalności jakie
+            oferuje aplikacja!
+          </p>
+          <button
+            type="button"
+            class="hidden"
+            id="register"
+            (click)="isSignDivVisiable = true"
+          >
+            Rejestracja
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
